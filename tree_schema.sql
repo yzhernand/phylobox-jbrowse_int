@@ -29,16 +29,16 @@ CREATE TABLE tree_root {
 	UNIQUE (tree_id, node_id)
 }
 
--- Node/genome table. This relates nodes to genomes. Basically, any node which represents
--- a genome in a tree shows up here, with both its node id and the represented genome id.
+-- Node/organism table. This relates nodes to organisms. Basically, any node which represents
+-- a organism in a tree shows up here, with both its node id and the represented organism id.
 -- Perhaps a better name is "leaf_nodes", but this name is taken from the BioSQL rough
 -- equivalent: node_taxon
-CREATE TABLE node_genome { -- Rename to leaf_node ??
-	node_genome_id	INTEGER PRIMARY KEY,
+CREATE TABLE node_organism { -- Rename to leaf_node ??
+	node_organism_id	INTEGER PRIMARY KEY,
 	node_id	INTEGER NOT NULL,
-	genome_id	INTEGER	NOT NULL,
+	organism_id	INTEGER	NOT NULL,
 	FOREIGN KEY (node_id) REFERENCES node(node_id),
-	FOREIGN KEY (genome_id) REFERENCES genome(genome_id) -- Subject to change depending on what this is called in the backend
+	FOREIGN KEY (organism_id) REFERENCES organism(organism_id)
 }
 
 -- Edge table. Edges hold the actual distance between connected nodes. Since an edge
