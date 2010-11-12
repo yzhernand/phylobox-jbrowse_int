@@ -1,0 +1,8 @@
+Tree storage schema for JBrowse backend GMatchbox.
+
+Follows conventions used in GMatchbox, such as database initialization using Catalyst. (WIP)
+
+TODO:
+- Currently, does not implement Catalyst functionality.
+- Script for generating PhyloXML is currently written to fetch from postgresql database. Once Catalyst use is implemented, this script will be more generalized.
+

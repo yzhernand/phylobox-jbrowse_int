@@ -1,0 +1,31 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use GetOpt::Long;
+
+use Bio::TreeIO;
+use Bio::Tree::Tree;
+use Bio::Tree::Node;
+
+use DBI;
+
+# <<Add an option to allow a tree to be constructed from just a list of OTUs>>
+my %opts;
+GetOptions (\%opts, "help|h",
+			"man|m") or pod2usage(2);
+
+pod2usage(1) if $opts{"help"};
+pod2usage(-exitstatus => 0, -verbose => 2) if $opts{"man"};
+
+# <<Use Catalyst for connecting to database>>
+my $dbi = DBI->connect("dbi:Pg:dbname=phylostore;host=localhost;port=5432");
+
+# <<Connect to db>>
+my $
+
+# <<Fetch tree info from the database>>
+
+	# <<Construct Tree using Node, Tree>>
+
+# <<Create and output a PhyloXML file>>
